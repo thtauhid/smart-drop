@@ -1,9 +1,14 @@
+"use client";
+
 import { FileDownload } from "@/components/file-download";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { FileArchive } from "lucide-react";
+import { useParams } from "next/navigation";
 
-export default function DownloadPage({ params }: { params: { id: string } }) {
+export default function DownloadPage() {
+  const params = useParams<{ id: string }>();
+
   const mockFileData = {
     id: params.id,
     name: "important-document.pdf",
